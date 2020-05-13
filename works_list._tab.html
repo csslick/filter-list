@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>웹퍼블리셔 홍길동의 홈페이지</title>
+  <title>work_list</title>
   <!-- 제이쿼리 -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
   <!-- 팬시박스(라이트박스) 플러그인 -->
@@ -11,11 +11,131 @@
   <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
   <!-- 웹폰트 -->
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
-  <!-- 내스타일 -->
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    body {
+      font-size: 18px;
+      font-family: 'Nanum Gothic', sans-serif;
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
+
+    .section_header {
+      margin-bottom: 100px;
+    }
+    section article {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    section article h2 {
+      margin-bottom: 1em;
+    }
+
+    /* 작품소개 */
+    #works {
+      width: 1200px;
+      margin: 0 auto;
+      overflow: hidden;
+      padding-top: 100px;
+    }
+
+    #works .section_header {
+      text-align: center;
+    }
+
+    #works .section_header>span {
+      padding-left: 160px;
+    }
+
+    #works>nav {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 80px;
+    }
+
+    #works>nav>a {
+      color: #202020;
+      margin-left: 25px;
+      margin-right: 25px;
+      text-transform: uppercase;
+      font-weight: bolder;
+    }
+
+    #work_list_all {
+      width: 1000px;
+      margin: 0 auto;
+    }
+
+    #work_list_all li {
+      position: relative;
+      /* width: 386.66px; height: 380px; */
+      width: 320px;
+      height: 300px;
+      overflow: hidden;
+      /* margin-right: 20px; */
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-bottom: 20px;
+      float: left;
+      /* box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); */
+    }
+    #work_list_all li a {
+      position: relative;
+      display: block;
+      /* border: 1px solid red; */
+      /* 작품 이미지 클리핑(확대시 영역 가림) */
+      overflow: hidden;
+      width: 100%; height: 100%;
+    }
+    #work_list_all li img {
+      width: 100%;
+    }
+
+    /* hover 박스 */
+    #work_list_all li>a>.info {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: #fef200;
+      display: none;
+      opacity: 0.8;
+    }
+
+    #work_list_all li:hover .info {
+      display: block;
+    }
+
+    /* 모션 확대 효과 */
+    #work_list_all li img {
+      transition: 0.5s;
+    }
+
+    #work_list_all li:hover img {
+      transform: scale(1.2);
+    }
+
+  </style>
+</head>
+
+<body>
   <!-- works -->
   <section id="works">
     <header class="section_header">
@@ -23,6 +143,7 @@
       <h2>MY WORKS</h2>
     </header>
     <nav>
+      <!-- tab -->
       <a href="#work_list_all">all</a>
       <a href="#web">web design</a>
       <a href="#graphic">graphic</a>
@@ -30,96 +151,136 @@
     </nav>
     <!-- 작품목록 -->
     <div id="work_list_all">
+      <!-- web -->
       <ul id="web">
         <li>
           <a href="work01.html">
-            <img src="http://placehold.it/387x387&text=web">
+            <img 
+              src="http://placehold.it/387x387&text=web" alt="web">
             <div class="info">
-              <h4>Homepage</h4>
+              <h4>투자자문 홈페이지</h4>
               <p>프로젝트 설명 요약글...</p>
             </div>
           </a>
+        </li>
         <li>
           <a href="work01.html">
-            <img src="http://placehold.it/387x387&text=web">
+            <img 
+              src="http://placehold.it/387x387&text=web" alt="web">
             <div class="info">
-              <h4>Homepage</h4>
+              <h4>투자자문 홈페이지</h4>
+              <p>프로젝트 설명 요약글...</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="work01.html">
+            <img 
+              src="http://placehold.it/387x387&text=web" alt="web">
+            <div class="info">
+              <h4>투자자문 홈페이지</h4>
               <p>프로젝트 설명 요약글...</p>
             </div>
           </a>
         </li>
       </ul>
+
+      <!-- graphic -->
       <ul id="graphic">
         <li>
           <a href="work01.html">
-            <img src="http://placehold.it/387x387&text=graphic">
+            <img 
+              src="http://placehold.it/387x387&text=graphic" alt="graphic">
             <div class="info">
-              <h4>Grapgic</h4>
+              <h4>투자자문 홈페이지</h4>
+              <p>프로젝트 설명 요약글...</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="work01.html">
+            <img 
+              src="http://placehold.it/387x387&text=graphic" alt="graphic">
+            <div class="info">
+              <h4>투자자문 홈페이지</h4>
               <p>프로젝트 설명 요약글...</p>
             </div>
           </a>
         </li>
       </ul>
+      <!-- uiux -->
       <ul id="uiux">
         <li>
           <a href="work01.html">
-            <img src="http://placehold.it/387x387&text=uiux">
+            <img 
+              src="http://placehold.it/387x387&text=uiux" alt="uiux">
             <div class="info">
-              <h4>UIUX</h4>
+              <h4>투자자문 홈페이지</h4>
               <p>프로젝트 설명 요약글...</p>
             </div>
           </a>
         </li>
         <li>
           <a href="work01.html">
-            <img src="http://placehold.it/387x387&text=uiux">
+            <img 
+              src="http://placehold.it/387x387&text=uiux" alt="uiux">
             <div class="info">
-              <h4>UIUX</h4>
+              <h4>투자자문 홈페이지</h4>
               <p>프로젝트 설명 요약글...</p>
             </div>
           </a>
         </li>
         <li>
           <a href="work01.html">
-            <img src="http://placehold.it/387x387&text=uiux">
+            <img 
+              src="http://placehold.it/387x387&text=uiux" alt="uiux">
             <div class="info">
-              <h4>UIUX</h4>
+              <h4>투자자문 홈페이지</h4>
               <p>프로젝트 설명 요약글...</p>
             </div>
           </a>
         </li>
         <li>
           <a href="work01.html">
-            <img src="http://placehold.it/387x387&text=uiux">
+            <img 
+              src="http://placehold.it/387x387&text=uiux" alt="uiux">
             <div class="info">
-              <h4>UIUX</h4>
+              <h4>투자자문 홈페이지</h4>
               <p>프로젝트 설명 요약글...</p>
             </div>
           </a>
         </li>
       </ul>
-    </div><!-- end work list -->
+    </div><!-- end work_list_all -->
 
   </section>
 
   <script>
-
     $(function(){
 
+      // 탭 버튼 이벤트
       $('#works nav a').on('click', function(){
-        // read category name
-        var cat_name = $(this).attr('href').slice(1);
-        console.log(cat_name);
-        if(cat_name !== 'work_list_all'){
+        // 카테고리명(hash값) 확인
+        var cat_name = $(this).attr('href');
+        console.log(cat_name)
+        
+        // 해당 아이디의 목록을 표시
+        if(cat_name !== '#work_list_all'){
+          // 일반 카테고리
           $('#work_list_all > ul').hide(200);
-          $('#work_list_all').find('#' + cat_name).show(200);
+          $(cat_name).show(200);
         } else {
+          // all 버튼을 누른 경우
           $('#work_list_all > ul').show(200);
         }
-        return false;
+
+        return false; // 하이퍼링크 기본이벤트 금지
+
       })
 
-    })
+
+    });
   </script>
 </body>
+
 </html>
